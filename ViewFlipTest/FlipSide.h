@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlipSide : UITableViewController {
-
+@interface FlipSide : UITableView <UITableViewDataSource> {
 }
+- (id)initWithStyle:(UITableViewStyle)style;
 
 @end

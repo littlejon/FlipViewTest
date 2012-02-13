@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlipMain : UIViewController
+@interface FlipMain : UIView
 
 @end

@@ -10,6 +10,11 @@
 
 @implementation FlipController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 - (FlipMain *)vcFlipMain {
     if (!_vcFlipMain) {
         _vcFlipMain = [[FlipMain alloc] init];
@@ -37,12 +42,12 @@
     [UIView transitionWithView:containerView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
         
         if (frontView) {
-            [self.vcFlipMain.view removeFromSuperview];
-            [containerView addSubview:self.vcFlipSide.view];
+            [self.vcFlipMain removeFromSuperview];
+            [containerView addSubview:self.vcFlipSide];
             frontView = NO;
         } else {
-            [self.vcFlipSide.view removeFromSuperview];
-            [containerView addSubview:self.vcFlipMain.view];
+            [self.vcFlipSide removeFromSuperview];
+            [containerView addSubview:self.vcFlipMain];
             frontView = YES;
         }
         
@@ -80,8 +85,8 @@
     NSLog(@"This Happened");
     
     containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-        
-    [containerView addSubview:self.vcFlipMain.view];
+
+    [containerView addSubview:self.vcFlipMain];
     
     frontView = YES;
     
