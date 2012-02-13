@@ -13,7 +13,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithFrame:CGRectMake(0,0,320,600) style:style];
+    self = [super initWithFrame:CGRectMake(0,0,320,367) style:style];
     if (self) {
         // Custom initialization
         self.dataSource = self;
