@@ -13,14 +13,14 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithFrame:CGRectMake(0,0,320,367) style:style];
+    self = [super initWithFrame:CGRectZero style:style];
     if (self) {
         // Custom initialization
         self.dataSource = self;
+        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
     return self;
 }
-
 
 #pragma mark - Table view data source
 

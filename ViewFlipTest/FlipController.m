@@ -39,6 +39,9 @@
 }
 
 - (void)flipView {
+
+    // looks best if you set the frame before you start the animation.
+    if (frontView) [self.vcFlipSide setFrame:containerView.frame];
     [UIView transitionWithView:containerView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
         
         if (frontView) {
@@ -101,10 +104,10 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
+
 
 @end
